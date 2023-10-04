@@ -1,0 +1,18 @@
+.example {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 70px;
+}
+
+.examples-text {
+  padding: 80px 50px;
+  width: 600px;
+}
+
+.create-text {
+  margin-top: 100px;
+}
+
+.play {
+  flex-direction: row-reverse;
+}

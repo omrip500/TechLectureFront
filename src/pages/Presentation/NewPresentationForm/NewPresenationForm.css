@@ -1,0 +1,108 @@
+body {
+  background-color: #f7f7f7;
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.lecture-form {
+  padding: 20px;
+  animation: fadeIn 0.5s ease;
+  margin-bottom: 293px;
+}
+
+#form {
+  margin-left: 33%;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.lecture-form h2 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 20px;
+  transition: color 0.3s ease;
+  text-align: center;
+}
+
+.lecture-form h2:hover {
+  color: #007bff;
+}
+
+.lecture-form label {
+  display: block;
+  margin-bottom: 10px;
+  color: #555;
+  font-weight: bold;
+  text-align: left;
+}
+
+.lecture-form input[type="text"]:focus,
+.lecture-form input[type="file"]:focus {
+  border-color: #007bff;
+}
+
+.lecture-form input[type="text"],
+.lecture-form input[type="file"] {
+  width: 50%;
+  padding: 12px;
+  margin: 20px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+.lecture-form button[type="submit"] {
+  padding: 12px 24px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  animation: scaleIn 0.5s ease;
+  margin-left: 15%;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.8);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.lecture-form button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.lectureDetails {
+  height: 83.5vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}

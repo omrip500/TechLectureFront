@@ -1,0 +1,55 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 5px;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav .side {
+  display: flex;
+}
+
+nav .side a {
+  color: #333;
+  padding: 10px 12px;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+nav .side a:hover,
+nav .side a.active {
+  text-decoration: rgb(99, 162, 99) 2px underline;
+  color: rgb(99, 162, 99);
+}
+
+#home {
+  background: #1692da;
+  border-radius: 5px;
+  color: #fff;
+  text-decoration: none;
+}
+
+#joinALecture {
+  color: #1692da;
+  font-weight: 700;
+  border: 2px solid #1692da;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+#sign-up {
+  color: #fff;
+  font-weight: 700;
+  background-color: #26890c;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+#user-name {
+  padding: 5px 10px;
+  font-weight: 700;
+  color: #26890c;
+}

@@ -1,0 +1,13 @@
+.qr-code-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.qr-code {
+  width: 200px;
+  height: 200px;
+  border: 2px solid #333;
+  border-radius: 10px;
+}

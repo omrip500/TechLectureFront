@@ -1,0 +1,89 @@
+/* LectureList.css */
+
+.lecture-list-container {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.lecture-list-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.lecture-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.lecture-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+  padding: 5px 20px;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.lecture-info {
+  flex: 1;
+}
+
+.serial-number {
+  font-weight: bold;
+}
+
+.lecture-actions {
+  display: flex;
+  align-items: center;
+}
+
+.lecture-name {
+  font-weight: bold;
+}
+
+.lecture-date {
+  color: #555555;
+}
+
+.lecture-link {
+  color: #007bff;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.delete-button {
+  background-color: #ff5733;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+  background-color: #ff3319;
+}
+
+.no-presentations-message {
+  text-align: center;
+  font-size: 24px;
+  color: #6b6b6b; /* A more pleasant color */
+  margin-top: 20px; /* Add some space above the message */
+  text-transform: uppercase; /* Convert text to uppercase for emphasis */
+  letter-spacing: 2px; /* Add letter spacing for style */
+  opacity: 0.7; /* Apply a subtle opacity effect */
+  transform: scale(0.95); /* Apply a slight scale effect */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.no-presentations-message:hover {
+  opacity: 1; /* Increase opacity on hover */
+  transform: scale(1); /* Restore scale on hover */
+}

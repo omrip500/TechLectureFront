@@ -1,0 +1,32 @@
+/* Greeting.css */
+
+/* סגנון לכל הקומפוננטה */
+div {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+/* סגנון לטקסט שלום */
+.helloToUser {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* סגנון לכפתור התנתק */
+.logOutButton {
+  background-color: #ff5733;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* סגנון לכפתור התנתק בעת הרענון של העכבר */
+button:hover {
+  background-color: #ff6e4a;
+}

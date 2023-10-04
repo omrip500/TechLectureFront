@@ -1,0 +1,88 @@
+.pdf-container {
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  max-width: 1200px; /* הגדלת רוחב הקובץ PDF */
+  text-align: center;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+}
+
+.view-title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.lecture-title {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.lecture-hours {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.lecturer-name {
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #777;
+}
+
+.studentView {
+  display: block;
+  margin: 0 auto;
+  width: 100%; /* הגדלת גודל הקובץ PDF לרוחב המרכזי */
+  height: 500px; /* הגדלת גובה הקובץ PDF */
+}
+
+.lecturerView {
+  display: block;
+  margin: 0 auto;
+  width: 100%; /* הגדלת גודל הקובץ PDF לרוחב המרכזי */
+  height: 1000px; /* הגדלת גובה הקובץ PDF */
+}
+
+.uploaded-file {
+  font-size: 16px;
+  color: #333;
+  margin-top: 20px;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.lectureNumber {
+  text-align: center;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.toolbar label {
+  margin-right: 10px;
+}
+
+.toolbar input[type="color"],
+.toolbar input[type="number"] {
+  width: 40px;
+  height: 25px;
+}

@@ -1,0 +1,22 @@
+.registration-description h1 {
+  text-align: center;
+  padding-top: 250px;
+}
+
+.registration-description p {
+  text-align: center;
+  line-height: 45px;
+  overflow-y: hidden;
+}
+
+.registration-description {
+  margin-bottom: 449px;
+}
+
+.login-link {
+  height: 140px;
+  width: 90px;
+  background: #1c6ccd;
+  padding: 15px 25px;
+  border-radius: 10px;
+}

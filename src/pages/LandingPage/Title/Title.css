@@ -1,0 +1,43 @@
+.external-container {
+  background: #c60929;
+  height: 619px;
+  width: 100%;
+  margin-left: auto;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.internal-container {
+  background: #e21b3c;
+  color: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 1400px;
+  height: 500px;
+  margin-top: 55px;
+}
+
+.internal-container .text h1 {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+img {
+  height: 431px;
+  width: 756px;
+}
+
+.btn {
+  background: #26890c;
+  color: #fff;
+  padding: 5px;
+  border: #fff 1px solid;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 14px;
+  width: 140px;
+  height: 40px;
+  cursor: pointer;
+}

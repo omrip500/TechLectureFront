@@ -1,0 +1,72 @@
+/* styles.css */
+
+/* סגנון לתצוגת הכותרת */
+.fileNotFoundMessage {
+  font-size: 4rem; /* גודל גופן גדול יותר */
+  color: #ff3366; /* צבע אדום מרשים */
+  text-align: center;
+  text-transform: uppercase; /* המרה לאותיות גדולות */
+  letter-spacing: 5px; /* מרווחים בין האותיות */
+  font-family: "Montserrat", sans-serif; /* בחירת גופן */
+  animation: fadeIn 2s ease-in-out; /* אנימציה - הטקסט יתמשך 2 שניות כדי להופיע בעדינות */
+}
+
+/* הוספת קבועים עבור האנימציה */
+@keyframes flash {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* הוספת אנימציה ל-DIV הראשון בתוך .window-container */
+.window-container .image-preview {
+  animation: flash 2s ease; /* הפעלת האנימציה */
+}
+
+.image-preview {
+  position: relative;
+  padding: 20px;
+  text-align: center;
+}
+
+/* עיצוב קישורים בשכבה המשנית (overlay) */
+.overlayy a {
+  color: #007bff; /* צבע קישור */
+  text-decoration: none; /*למנוע קו תחתון */
+  font-weight: bold; /* טקסט מודגש */
+}
+
+.overlay a:hover {
+  text-decoration: underline;
+}
+
+.file-upload-text {
+  white-space: nowrap;
+  /* background-color: transparent; */
+}
+
+.centered-button {
+  text-align: center;
+  border-radius: 5px;
+}
+
+.allowUploadingFiles {
+  border: 2px solid #007bff;
+  border-radius: 15px;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.allowUploadingFiles:hover {
+  background-color: #0056b3;
+}
+
+.allowUploadingFiles:active {
+  background-color: #00327a;
+}

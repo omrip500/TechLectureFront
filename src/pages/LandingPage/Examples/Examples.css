@@ -1,0 +1,17 @@
+.exmples {
+  padding-top: 100px;
+}
+
+.exmples > h1 {
+  text-align: center;
+  color: rgb(51, 51, 51);
+  font-size: 44px;
+  font-weight: 900;
+  line-height: 44px;
+  line-height: 2;
+}
+
+.three-examples {
+  display: flex;
+  justify-content: center;
+}

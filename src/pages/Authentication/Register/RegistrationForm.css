@@ -1,0 +1,138 @@
+/* Reset some default browser styles */
+body,
+h1,
+h2,
+h3,
+p,
+label,
+input,
+select,
+button,
+a {
+  margin: 0;
+  padding: 0;
+  text-decoration: none; /* Remove default text decoration from links */
+  color: inherit; /* Inherit the color from the parent element */
+}
+
+.registration-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.registration-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 40px;
+}
+
+.registration-description {
+  flex: 1;
+  padding-right: 40px;
+}
+
+.registration-description h1 {
+  font-size: 36px;
+  margin-bottom: 10px; /* Decreased spacing */
+}
+
+.maybeHaveAccount p {
+  font-size: 18px;
+  color: #666;
+}
+
+.loginWord {
+  font-size: 18px;
+  color: #007bff;
+}
+
+.registration-description p .login-link {
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.registration-description p .login-link:hover {
+  background-color: #0056b3;
+}
+
+.registration-form {
+  flex: 1;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.registration-form input[type="text"],
+.registration-form input[type="password"],
+.registration-form input[type="email"] {
+  width: 90%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.registration-form select {
+  width: 95%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.submit-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+.errorMessage {
+  color: red;
+}
+
+.submit-buttonDisabled {
+  background-color: grey;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.registered {
+  color: red;
+}

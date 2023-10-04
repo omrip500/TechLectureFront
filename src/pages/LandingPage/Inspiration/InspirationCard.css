@@ -1,0 +1,51 @@
+.inspiration-card .details {
+  padding-left: 20px;
+  display: flex;
+}
+
+.inspiration-card p {
+  padding-left: 10px;
+}
+
+.inspiration-card {
+  box-sizing: border-box;
+  width: 383.99px;
+  height: 488px;
+  background: #fff;
+  margin: 20px 10px;
+  overflow-y: hidden;
+}
+
+.inspiration-card:hover {
+  cursor: pointer;
+  opacity: 0.4;
+}
+
+.inspiration-card img {
+  height: 216px;
+  width: 384px;
+}
+
+.inspiration-card .details p {
+  line-height: 5px;
+  overflow-y: hidden;
+}
+
+.inspiration-card .details img {
+  height: 32px;
+  width: 32px;
+  border-radius: 50px;
+}
+
+.inspiration-card .content {
+  padding: 15px 10px;
+}
+
+.inspiration-card .content h3 {
+  padding-left: 10px;
+}
+
+.inspiration-card .content p {
+  font-size: 14px;
+  font-weight: 400;
+}

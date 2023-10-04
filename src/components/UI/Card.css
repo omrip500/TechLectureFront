@@ -1,0 +1,12 @@
+.card {
+  flex-shrink: 0;
+  width: 680px;
+  height: 360px;
+  background-color: white;
+  border: 1px solid #000;
+  margin: 5px;
+  border-radius: 10px;
+
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+}

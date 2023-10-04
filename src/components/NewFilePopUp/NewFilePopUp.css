@@ -1,0 +1,40 @@
+/* סגנון לתצוגת הכותרת */
+.fileNotFoundMessage {
+  font-size: 4rem;
+  color: #ff3366;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-family: "Montserrat", sans-serif;
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes flash {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.window-container .image-preview.flash {
+  animation: flash 2s ease;
+}
+
+.image-preview {
+  position: relative;
+  padding: 20px;
+  text-align: center;
+}
+
+.overlay a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.overlay a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,148 @@
+/* קובץ CSS לדף אודות */
+
+.about-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.about-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 40px;
+}
+
+.about-info {
+  flex: 1;
+  padding-right: 40px;
+}
+
+.about-info h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.about-info p {
+  font-size: 18px;
+  color: #666;
+}
+
+.about-details {
+  flex: 1;
+}
+
+.about-details h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.about-details ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.about-details ul li {
+  font-size: 18px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.about-details ul li::before {
+  content: "\2022";
+  position: absolute;
+  left: -20px;
+  color: #007bff;
+}
+
+.about-details p {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.about-footer {
+  background-color: #3949ab;
+  color: #fff;
+  padding: 10px 0;
+  width: 100%;
+  text-align: center;
+}
+/* קובץ CSS לדף אודות */
+
+.about-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.about-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 40px;
+}
+
+.about-info {
+  flex: 1;
+  padding-right: 40px;
+}
+
+.about-info h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.about-info p {
+  font-size: 18px;
+  color: #666;
+}
+
+.about-details {
+  flex: 1;
+}
+
+.about-details h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.about-details ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.about-details ul li {
+  font-size: 18px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.about-details ul li::before {
+  content: "\2022";
+  position: absolute;
+  left: -20px;
+  color: #007bff;
+}
+
+.about-details p {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.about-footer {
+  background-color: #3949ab;
+  color: #fff;
+  padding: 10px 0;
+  width: 100%;
+  text-align: center;
+}
