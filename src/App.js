@@ -22,17 +22,6 @@ import { useParams } from "react-router-dom";
 function App() {
   const signOut = useSignOut();
   const [isSigningOut, setIsSigningOut] = useState(false);
-  const { fileNumber } = useParams();
-
-  useEffect(() => {
-    const lastFile = getLastStudentsUpload();
-  }, []);
-
-  const getLastStudentsUpload = async () =>
-    await fetch(
-      // "http://localhost:8080/upload/" + fileNumber
-      "/getLastStudentsUpload"
-    );
 
   const signOutTechLecture = () => {
     document.body.classList.add("signing-out");
@@ -119,7 +108,7 @@ function App() {
   return (
     <>
       {isSigningOut && (
-        <div className="loading-screen">
+        <div className="loading-screen flex center">
           <span className="loading-text">Signing out...</span>
         </div>
       )}

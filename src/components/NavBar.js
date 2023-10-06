@@ -18,7 +18,7 @@ const NavigationBar = () => {
   const authUser = useAuthUser();
   const isAuthenticated = useIsAuthenticated();
   return (
-    <nav>
+    <nav className="navBar flex">
       <ul className="side left-side">
         <NavLink
           id="home"
@@ -63,7 +63,7 @@ const NavigationBar = () => {
         )}
       </ul>
 
-      <ul className="side right-side">
+      <ul className="side right-side flex">
         {isAuthenticated() && (
           <p id="user-name">{"Hello " + authUser().firstName}</p>
         )}

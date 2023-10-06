@@ -1,4 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
 
 /* Styles for the loading screen */
 .loading-screen {
@@ -8,12 +13,77 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  /* display: flex; */
+  /* justify-content: center;
+  align-items: center; */
 }
 
 .loading-text {
   color: white; /* Color of the loading text */
   font-size: 24px;
+}
+
+.flex {
+  display: flex;
+}
+
+.center {
+  align-items: center;
+  justify-content: center;
+}
+
+.col {
+  flex-direction: column;
+}
+
+h1 {
+  font-size: clamp(18px, 3.5vw, 40px);
+}
+h2 {
+  font-size: clamp(16px, 3vw, 36px);
+}
+
+.notSupport {
+  display: none;
+}
+
+/* @media (max-width: 500px) {
+  h1 {
+    font-size: 24px;
+  }
+  img {
+    width: 90vw;
+  }
+  .flex {
+    flex-direction: column;
+  }
+} */
+
+@media (max-width: 500px) {
+  .external-container,
+  .explanation,
+  .exmples,
+  .inspiration,
+  .navBar,
+  .footer {
+    display: none;
+  }
+  .notSupport {
+    display: flex;
+  }
+}
+
+@media (max-width: 915px) {
+  .external-container,
+  .explanation,
+  .exmples,
+  .inspiration,
+  .navBar,
+  .footer {
+    display: none;
+  }
+
+  .notSupport {
+    display: flex;
+  }
 }

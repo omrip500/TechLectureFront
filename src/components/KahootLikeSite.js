@@ -3,7 +3,7 @@ import "./KahootStyle.css";
 
 const KahootLikeSite = () => {
   return (
-    <div className="kahoot-container">
+    <div className="kahoot-container flex">
       <header className="kahoot-header">
         <h1>Kahoot.it</h1>
         <nav>

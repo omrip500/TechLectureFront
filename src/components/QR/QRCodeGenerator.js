@@ -4,7 +4,7 @@ import "./QRCodeGenerator.css";
 
 function QRCodeGenerator({ url }) {
   return (
-    <div className="qr-code-container">
+    <div className="qr-code-container flex">
       <QRCode value={url} className="qr-code" />
     </div>
   );

@@ -5,7 +5,7 @@ body {
 }
 
 .contact-container {
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
   min-height: 100vh;
@@ -14,7 +14,7 @@ body {
 }
 
 .contact-content {
-  display: flex;
+  /* display: flex; */
   justify-content: space-between;
   align-items: center;
   width: 100%;
@@ -27,7 +27,7 @@ body {
   padding-right: 40px;
 }
 
-.contact-info h1 {
+.contact-info h2 {
   font-size: 36px;
   margin-bottom: 10px;
 }

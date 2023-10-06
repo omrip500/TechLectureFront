@@ -3,6 +3,7 @@ import "./NewPresenationForm.css";
 import QRCodeGenerator from "../../../components/QR/QRCodeGenerator";
 import { useAuthUser } from "react-auth-kit";
 import { Link } from "react-router-dom";
+import { baseApi } from "../../../consts";
 
 function NewPresenationForm() {
   const auth = useAuthUser();
@@ -44,8 +45,7 @@ function NewPresenationForm() {
     formData.append("date", new Date().toUTCString().slice(5, 16));
 
     try {
-      // const response = await fetch("http://localhost:8080/upload", {
-      const response = await fetch("/upload", {
+      const response = await fetch(`${baseApi}/upload`, {
         method: "POST",
         body: formData,
       });
@@ -124,7 +124,7 @@ function NewPresenationForm() {
         </div>
       )}
       {fileUploadSuccessfully && (
-        <div className="lectureDetails">
+        <div className="lectureDetails flex">
           <QRCodeGenerator url={`${studentPresentationAddress}`} />
           <h3>{"Presentation Code: " + fileName}</h3>
           <Link to={lecturerPresenationAddress}>Move to Lecturer Position</Link>

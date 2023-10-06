@@ -4,6 +4,7 @@ import { Link, Navigate } from "react-router-dom";
 import { useIsAuthenticated } from "react-auth-kit";
 
 import "./RegistrationForm.css";
+import { baseApi } from "../../../consts";
 
 const errorsExist = (errors) => {
   if (Object.keys(errors).length !== 0) {
@@ -69,8 +70,7 @@ const RegistrationForm = () => {
         onSubmit={async (values, { setSubmitting }) => {
           // alert(JSON.stringify(values, null, 2));
           // console.log(values);
-          // const response = await fetch("http://localhost:8080/register", {
-          const response = await fetch("/register", {
+          const response = await fetch(`${baseApi}/register`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -101,10 +101,10 @@ const RegistrationForm = () => {
           handleSubmit,
           /* and other goodies */
         }) => (
-          <div className="registration-container">
-            <div className="registration-content">
+          <div className="registration-container flex center">
+            <div className="registration-content flex">
               <div className="registration-description">
-                <h1>Welcome to Our Community!</h1>
+                <h2>Welcome to Our Community!</h2>
                 <p>
                   Join our platform and enjoy a seamless experience. Connect
                   with others, learn and share knowledge.

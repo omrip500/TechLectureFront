@@ -5,7 +5,7 @@ const Inspiration = () => {
   return (
     <section class="inspiration">
       <h1>Inspiring stories from TechLecture heroes</h1>
-      <div class="inspiration-cards">
+      <div class="inspiration-cards flex">
         <InspirationCard
           mainImg={require("../photos/inspiration1.jpg")}
           avatarImg={require("../photos/ladyavatar.png")}

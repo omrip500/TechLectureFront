@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./ContactPage.css";
+import { baseApi } from "../../consts";
 
 const ContactPage = () => {
   const [name, setName] = useState("");
@@ -23,8 +24,7 @@ const ContactPage = () => {
     setEmail("");
     setMessage("");
 
-    // const response = await fetch("http://localhost:8080/contact", {
-    const response = await fetch("/contact", {
+    const response = await fetch(`${baseApi}/contact`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -41,10 +41,10 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="contact-container">
-      <div className="contact-content">
+    <div className="contact-container flex center">
+      <div className="contact-content flex">
         <div className="contact-info">
-          <h1>Contact Us</h1>
+          <h2>Contact Us</h2>
           <p>
             We would love to hear from you. Fill out the form below to get in
             touch.

@@ -85,7 +85,7 @@ body {
 
 .lectureDetails {
   height: 83.5vh;
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   justify-content: center;
   text-align: center;

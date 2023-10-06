@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useAuthUser } from "react-auth-kit";
 import io from "socket.io-client";
 import "./PDFViewer.css";
+import { baseApi } from "../../../consts";
 
 const PDFViewer = ({
   url,
@@ -64,8 +65,7 @@ const PDFViewer = ({
     formData.append("presentationNumber", fileNumber);
 
     try {
-      // const response = await fetch("http://localhost:8080/studentsUploads", {
-      const response = await fetch("/studentsUploads", {
+      const response = await fetch(`${baseApi}/studentsUploads`, {
         method: "POST",
         body: formData,
       });

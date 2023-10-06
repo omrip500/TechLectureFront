@@ -2,7 +2,7 @@
   /* max-width: 1900px;
   max-height: 800px; */
   background-color: #cccccc;
-  display: flex;
+  /* display: flex; */
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
@@ -12,7 +12,7 @@
   /* max-width: 1900px;
   max-height: 800px; */
   background-color: white;
-  display: flex;
+  /* display: flex; */
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;

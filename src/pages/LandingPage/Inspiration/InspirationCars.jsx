@@ -11,7 +11,7 @@ const InspirationCard = ({
   return (
     <div className="inspiration-card">
       <img src={mainImg} />
-      <div className="details">
+      <div className="details flex">
         <img src={avatarImg} alt="avatar" />
         <p>
           <br />

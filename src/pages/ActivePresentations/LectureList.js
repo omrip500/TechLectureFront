@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import classes from "./LectureList.module.css";
 import { useAuthUser } from "react-auth-kit";
 import { Navigate, Link } from "react-router-dom";
+import { baseApi } from "../../consts";
 
 const LectureList = () => {
   const auth = useAuthUser();
@@ -12,8 +13,7 @@ const LectureList = () => {
   useEffect(() => {
     const getUserActivePresentations = async () => {
       const response = await fetch(
-        // "http://localhost:8080/userActivePresentations/" + userEmail
-        "/userActivePresentations/" + userEmail
+        `${baseApi}/userActivePresentations/${userEmail}`
       );
       const data = await response.json();
       if (data.status === 200) {
@@ -25,17 +25,13 @@ const LectureList = () => {
   }, [userEmail]);
 
   const handleDeletePresentation = async (presentationID) => {
-    const response = await fetch(
-      // "http://localhost:8080/deleteUserActivePresentation/",
-      "/deleteUserActivePresentation/",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ presentationID: presentationID }),
-      }
-    );
+    const response = await fetch(`${baseApi}/deleteUserActivePresentation/`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ presentationID: presentationID }),
+    });
     const data = await response.json();
     if (data.status === 200) {
       setUserActivePresentations(
@@ -62,7 +58,7 @@ const LectureList = () => {
       ) : (
         <ul className={classes["lecture-list"]}>
           {userActivePresentations.map((presentation, index) => (
-            <li key={index} className={classes["lecture-item"]}>
+            <li key={index} className={classes["lecture-item"] + " flex"}>
               <div className={classes["lecture-info"]}>
                 <p className={classes["serial-number"]}>
                   Lecture Number: {index + 1}
@@ -74,7 +70,7 @@ const LectureList = () => {
                   Date: {presentation.date}
                 </p>
               </div>
-              <div className={classes["lectures-actions"]}>
+              <div className={classes["lectures-actions flex"]}>
                 <Link
                   to={`/lectures/lecturerPosition/${presentation.fileNumber}`}
                   className={classes["lecture-link"]}

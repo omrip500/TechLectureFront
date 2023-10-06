@@ -3,6 +3,7 @@ import { Formik } from "formik";
 import "./LoginForm.css";
 import { Link, Navigate, useLocation } from "react-router-dom";
 import { useSignIn, useIsAuthenticated } from "react-auth-kit";
+import { baseApi } from "../../../consts";
 
 const errorsExist = (errors) => {
   if (Object.keys(errors).length !== 0) {
@@ -63,7 +64,7 @@ const LoginPage = ({ toLecture }) => {
           // alert(JSON.stringify(values, null, 2));
           // console.log(values);
           // const response = await fetch("http://localhost:8080/login", {
-          const response = await fetch("/login", {
+          const response = await fetch(`${baseApi}/login`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -107,9 +108,9 @@ const LoginPage = ({ toLecture }) => {
           isSubmitting,
           /* and other goodies */
         }) => (
-          <div className="login-container">
-            <div className="login-content">
-              <div className="login-img">
+          <div className="login-container flex">
+            <div className="login-content flex">
+              <div className="login-img flex">
                 <img
                   src={require("../../../images/login_illustration.png")}
                   // width="960px"

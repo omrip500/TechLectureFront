@@ -7,6 +7,7 @@ import io from "socket.io-client";
 import "./PresentationShow.css";
 import NewUserPopUp from "../../../components/NewUserPopUp/NewUserPopUp";
 import NewFilePopUp from "../../../components/NewFilePopUp/NewFilePopUp";
+import { baseApi } from "../../../consts";
 
 const PresentationShow = (props) => {
   const [fileFounded, setFiledFounded] = useState(false);
@@ -17,7 +18,7 @@ const PresentationShow = (props) => {
   const [userFileUrl, setUserFileUrl] = useState("");
   const [thereIsANewFile, setThereIsANewFile] = useState(false);
   const [userFullName, setUserFulleName] = useState("");
-  const [hasPermission, setHasPermission] = useState(true); // תיקנתי שגיאת כתיב
+  const [hasPermission, setHasPermission] = useState(true);
   const [studentsUploadButtonText, setStudentsUploadButtonText] = useState(
     "File upload is not enabled"
   );
@@ -28,7 +29,7 @@ const PresentationShow = (props) => {
   const isAuthenticated = useIsAuthenticated();
   const fileNumber = useParams().fileNumber;
 
-  const [newUsers, setNewUsers] = useState([]); // תופסת למעקב אחרי המשתמשים החדשים שמתחברים
+  const [newUsers, setNewUsers] = useState([]);
 
   const clickHandle = () => {
     setStudentsCanUploadFiles(!studentsCanUploadFiles);
@@ -43,10 +44,7 @@ const PresentationShow = (props) => {
 
     const fetchData = async () => {
       try {
-        const response = await fetch(
-          // "http://localhost:8080/upload/" + fileNumber
-          "/upload/" + fileNumber
-        );
+        const response = await fetch(`${baseApi}/upload/${fileNumber}`);
 
         const data = await response.json();
         if (data.status === 400) {
@@ -56,9 +54,7 @@ const PresentationShow = (props) => {
           if (data.lecturerEmail !== auth().email) {
             setHasPermission(false);
           }
-          const presentationFileUrl =
-            // "http://localhost:8080/uploads/" + fileNumber + "." + data.fileType;
-            "/uploads/" + fileNumber + "." + data.fileType;
+          const presentationFileUrl = `${baseApi}/uploads/${fileNumber}.${data.fileType}`;
           setFileUrl(presentationFileUrl);
           setLectureTitle(data.lectureTopic);
           setLectureHours(data.hours);
@@ -96,13 +92,13 @@ const PresentationShow = (props) => {
 
   useEffect(() => {
     const getStudentFile = async () => {
+      setThereIsANewFile(false);
       if (props.viewType === "lecturer") {
         socket.emit("joinRoom", { fileNumber });
         socket.on("userFileNumber", ({ fileNumber, userUploaded }) => {
           setUserFileUrl(`/studentsUploads/${fileNumber}`);
           setThereIsANewFile(true);
           setUserFulleName(userUploaded);
-
           if (studentsCanUploadFiles) {
             window.scrollTo(0, 0);
           }

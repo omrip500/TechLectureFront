@@ -11,11 +11,10 @@
 .inspiration h1 {
   color: #fff;
   padding: 40px 30px;
-  font-size: 44px;
 }
 
 .inspiration-cards {
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   flex-wrap: wrap;
   width: 1600px;

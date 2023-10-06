@@ -3,10 +3,10 @@ import "./AboutPage.css";
 
 const AboutPage = () => {
   return (
-    <div className="about-container">
-      <div className="about-content">
+    <div className="about-container flex center">
+      <div className="about-content flex">
         <div className="about-info">
-          <h1>About Our Product</h1>
+          <h2>About Our Product</h2>
           <p>
             Welcome to our innovative product that will change the way you
             interact with education and technology.

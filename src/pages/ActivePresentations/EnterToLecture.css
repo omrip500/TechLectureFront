@@ -11,7 +11,7 @@
 }
 
 .enter-to-lecture form {
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   align-items: center;
 }

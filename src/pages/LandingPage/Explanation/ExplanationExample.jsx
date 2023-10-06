@@ -7,9 +7,9 @@ const ExplanationExample = ({
   imgSrc,
 }) => {
   return (
-    <div className={`example ${exampleType}`}>
+    <div className={`example ${exampleType} flex`}>
       <div className={`examples-text ${exampleType}-text`}>
-        <h1>{titleText}</h1>
+        <h2>{titleText}</h2>
         <p>{paragraphText}</p>
       </div>
       <img src={imgSrc} />

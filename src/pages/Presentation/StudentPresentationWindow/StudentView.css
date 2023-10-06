@@ -1,5 +1,5 @@
 .window-container {
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   align-items: center;
   padding: 20px;
@@ -17,7 +17,7 @@
   width: 100%;
   height: 100%;
   background-color: rgba(255, 255, 255, 0.8);
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -29,7 +29,7 @@
 
 .placeholder {
   .window-container {
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     align-items: center;
     padding: 20px;
@@ -40,7 +40,7 @@
   }
 
   .image-display-container {
-    display: flex;
+    /* display: flex; */
     justify-content: center;
     align-items: center;
   }
@@ -48,7 +48,7 @@
   .image-preview {
     border: 2px dashed #ccc;
     padding: 20px;
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     align-items: center;
     position: relative;
@@ -75,7 +75,7 @@
 }
 
 .edit-bar {
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   margin-top: 10px;
 }

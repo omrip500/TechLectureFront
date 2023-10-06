@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import "./EnterToLecture.css";
+import { baseApi } from "../../consts";
 
 function EnterToLecture() {
   const [fileNumber, setFileNumber] = useState("");
@@ -14,8 +15,7 @@ function EnterToLecture() {
 
   const handleLogin = async () => {
     const response = await fetch(
-      // `http://localhost:8080/checkIfPresentationExists/${fileNumber}`
-      `/checkIfPresentationExists/${fileNumber}`
+      `${baseApi}/checkIfPresentationExists/${fileNumber}`
     );
     const data = await response.json();
     if (data.status === 200) {
@@ -35,7 +35,7 @@ function EnterToLecture() {
         </p>
       )}
       <h2>Login to Existing Lecture</h2>
-      <form>
+      <form className="flex">
         <label>
           Lecture Number:
           <input

@@ -1,5 +1,5 @@
 .qr-code-container {
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   align-items: center;
   margin: 20px;

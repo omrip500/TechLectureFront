@@ -1,15 +1,16 @@
 .exampleWithPhoto {
-  display: flex;
   flex-direction: column;
-  margin: 50px 50px;
+  margin-top: auto;
+  padding: 0 4rem;
 }
 
 .exampleWithPhoto img {
   height: 300px;
-  width: 300px;
-  margin-left: 110px;
+  width: 360px;
+  margin: auto auto;
 }
 
 .example-text {
   text-align: center;
+  padding-top: 1rem;
 }

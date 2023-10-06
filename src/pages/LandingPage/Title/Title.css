@@ -1,32 +1,32 @@
 .external-container {
   background: #c60929;
-  height: 619px;
-  width: 100%;
-  margin-left: auto;
-  margin: auto;
-  display: flex;
+  /* height: 619px; */
+  padding-block: 4vw;
+  /* display: flex; */
   justify-content: center;
 }
 
 .internal-container {
   background: #e21b3c;
   color: #fff;
-  display: flex;
-  justify-content: space-around;
+  /* display: flex; */
+  gap: 16px;
+  justify-content: space-between;
   align-items: center;
-  width: 1400px;
-  height: 500px;
-  margin-top: 55px;
+  width: clamp(350px, 80vw, 1400px);
+  padding: 32px;
+  margin: auto;
 }
 
 .internal-container .text h1 {
-  font-size: 40px;
   font-weight: 700;
 }
 
 img {
+  object-fit: cover;
+
   height: 431px;
-  width: 756px;
+  width: clamp(400px, 50vw, 756px);
 }
 
 .btn {
@@ -40,4 +40,13 @@ img {
   width: 140px;
   height: 40px;
   cursor: pointer;
+}
+
+@media (max-width: 750px) {
+  .internal-container {
+    flex-direction: column;
+  }
+  img {
+    width: 90%;
+  }
 }

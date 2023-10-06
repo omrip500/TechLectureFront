@@ -1,5 +1,5 @@
 .example {
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   padding-bottom: 70px;
 }

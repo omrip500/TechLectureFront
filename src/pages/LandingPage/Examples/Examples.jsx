@@ -5,7 +5,7 @@ const Examples = () => {
   return (
     <section className="exmples">
       <h1>Played around the world in classrooms, offices and living rooms</h1>
-      <div className="three-examples">
+      <div className="three-examples flex">
         <ExampleCard
           imgSrc={require("../photos/teacher.png")}
           titleText="By teachers and students"

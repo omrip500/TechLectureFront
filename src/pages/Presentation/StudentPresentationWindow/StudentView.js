@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./StudentView.css"; // עיצוב בעזרת CSS
+import { baseApi } from "../../../consts";
 
 const StudentView = (props) => {
   const fileNumber = props.fileNumber;
@@ -9,11 +10,11 @@ const StudentView = (props) => {
   const [lecturerName, setLecturerName] = useState("");
 
   useEffect(async () => {
-    const response = await fetch("localhost:8080/upload/" + fileNumber);
+    const response = await fetch(`${baseApi}/upload/${fileNumber}`);
 
     if (response.ok) {
       const data = await response.json();
-      setFileUrl("localhost:8080/uploads/" + fileNumber + "." + data.fileType);
+      setFileUrl(`${baseApi}${fileNumber}.${data.fileType}`);
       setLectureTitle(data.lectureTopic);
       setLectureHours(data.hours);
       setLecturerName(data.lecturerName);

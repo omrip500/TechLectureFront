@@ -6,8 +6,8 @@ const Title = () => {
 
   return (
     <section>
-      <div class="external-container">
-        <div class="internal-container">
+      <div class="external-container flex">
+        <div class="internal-container flex">
           <div class="text">
             <h1>What is TechLecture?</h1>
             <p>
