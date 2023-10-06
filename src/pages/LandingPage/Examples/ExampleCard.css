@@ -1,7 +1,7 @@
 .exampleWithPhoto {
   flex-direction: column;
   margin-top: auto;
-  padding: 0 4rem;
+  padding: 0 7rem;
 }
 
 .exampleWithPhoto img {
