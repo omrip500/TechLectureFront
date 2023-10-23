@@ -19,7 +19,7 @@
 }
 
 .lecture-item {
-  /* display: flex; */
+  display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 20px 0;
@@ -39,7 +39,7 @@
 }
 
 .lecture-actions {
-  /* display: flex; */
+  display: flex;
   align-items: center;
 }
 
@@ -86,4 +86,10 @@
 .no-presentations-message:hover {
   opacity: 1; /* Increase opacity on hover */
   transform: scale(1); /* Restore scale on hover */
+}
+
+@media (max-width: 500px) {
+  .lecture-item {
+    flex-direction: column;
+  }
 }

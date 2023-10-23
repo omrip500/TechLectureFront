@@ -1,6 +1,6 @@
 .example {
-  /* display: flex; */
-  justify-content: center;
+  /* display: flex;
+  justify-content: center; */
   padding-bottom: 70px;
 }
 
@@ -15,4 +15,23 @@
 
 .play {
   flex-direction: row-reverse;
+}
+
+@media (max-width: 500px) {
+  .example-img {
+    width: 370px;
+  }
+
+  .example .examples-text {
+    padding: 0 45px;
+  }
+
+  .example .examples-text p {
+    width: 80vw;
+    justify-content: center;
+  }
+
+  .play {
+    flex-direction: column !important;
+  }
 }

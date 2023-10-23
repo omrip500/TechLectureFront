@@ -5,8 +5,6 @@ body {
 }
 
 .contact-container {
-  /* display: flex; */
-  justify-content: center;
   align-items: center;
   min-height: 100vh;
   background-color: #f5f5f5;
@@ -14,7 +12,7 @@ body {
 }
 
 .contact-content {
-  /* display: flex; */
+  display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
@@ -27,7 +25,7 @@ body {
   padding-right: 40px;
 }
 
-.contact-info h2 {
+.contact-info h1 {
   font-size: 36px;
   margin-bottom: 10px;
 }
@@ -42,7 +40,7 @@ body {
   border-radius: 8px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   padding: 40px;
-  width: 100%;
+  width: clamp(340px, 70vw, 500px);
   max-width: 400px;
   text-align: center;
 }
@@ -65,7 +63,7 @@ label {
 .contact-content input[type="text"],
 .contact-content input[type="email"],
 .contact-content textarea {
-  width: 93%;
+  width: 90%;
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -101,4 +99,15 @@ label {
 
 .emailWasSent {
   color: green;
+}
+
+@media (max-width: 500px) {
+  .contact-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact-content .contact-info {
+    padding: 50px 50px;
+  }
 }

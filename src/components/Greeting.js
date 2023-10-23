@@ -1,9 +1,7 @@
 import React from "react";
-import classes from "./Greeting.css"; // השלמת היכולת לעצב את הקומפוננטה
-
+import classes from "./Greeting.css";
 const Greeting = (props) => {
   const handleLogout = () => {
-    // פונקציה זו תבצע את התנתקות המשתמש
     alert("התנתקת בהצלחה");
   };
 

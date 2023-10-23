@@ -1,6 +1,6 @@
 .inspiration-card .details {
   padding-left: 20px;
-  /* display: flex; */
+  display: flex;
 }
 
 .inspiration-card p {
@@ -9,8 +9,8 @@
 
 .inspiration-card {
   box-sizing: border-box;
-  width: 383.99px;
-  height: 488px;
+  width: clamp(300px, 50vw, 383.94px);
+  height: 526px;
   background: #fff;
   margin: 20px 10px;
   overflow-y: hidden;
@@ -48,4 +48,10 @@
 .inspiration-card .content p {
   font-size: 14px;
   font-weight: 400;
+}
+
+@media (min-width: 501px) and (max-width: 1800px) {
+  .inspiration-card {
+    width: clamp(300px, 50vw, 310px);
+  }
 }

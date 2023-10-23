@@ -25,6 +25,7 @@ body {
 
 .flex {
   display: flex;
+  justify-content: center;
 }
 
 .center {
@@ -47,7 +48,7 @@ h2 {
   display: none;
 }
 
-/* @media (max-width: 500px) {
+@media (max-width: 500px) {
   h1 {
     font-size: 24px;
   }
@@ -56,34 +57,5 @@ h2 {
   }
   .flex {
     flex-direction: column;
-  }
-} */
-
-@media (max-width: 500px) {
-  .external-container,
-  .explanation,
-  .exmples,
-  .inspiration,
-  .navBar,
-  .footer {
-    display: none;
-  }
-  .notSupport {
-    display: flex;
-  }
-}
-
-@media (max-width: 915px) {
-  .external-container,
-  .explanation,
-  .exmples,
-  .inspiration,
-  .navBar,
-  .footer {
-    display: none;
-  }
-
-  .notSupport {
-    display: flex;
   }
 }

@@ -1,12 +1,12 @@
 .exampleWithPhoto {
+  display: flex;
   flex-direction: column;
-  margin-top: auto;
-  padding: 0 7rem;
+  margin: 50px 50px;
 }
 
 .exampleWithPhoto img {
   height: 300px;
-  width: 360px;
+  width: 300px;
   margin: auto auto;
 }
 

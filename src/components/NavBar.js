@@ -18,7 +18,7 @@ const NavigationBar = () => {
   const authUser = useAuthUser();
   const isAuthenticated = useIsAuthenticated();
   return (
-    <nav className="navBar flex">
+    <nav className="navBar">
       <ul className="side left-side">
         <NavLink
           id="home"
@@ -31,23 +31,22 @@ const NavigationBar = () => {
 
         <NavLink
           to="contact"
-          className={({ isActive }) => (isActive ? "active" : undefined)}
+          className={({ isActive }) => (isActive ? "link active" : "link")}
         >
           <FontAwesomeIcon icon={faAddressCard} /> Contact
         </NavLink>
 
         <NavLink
           to="about"
-          className={({ isActive }) => (isActive ? "active" : undefined)}
+          className={({ isActive }) => (isActive ? "link active" : "link")}
         >
-          <FontAwesomeIcon icon={faCircleInfo} />
-          About
+          <FontAwesomeIcon icon={faCircleInfo} /> About
         </NavLink>
 
         {isAuthenticated() && (
           <NavLink
             to="presentation"
-            className={({ isActive }) => (isActive ? "active" : undefined)}
+            className={({ isActive }) => (isActive ? "link active" : "link")}
           >
             <FontAwesomeIcon icon={faPersonChalkboard} /> new Lecture
           </NavLink>
@@ -56,14 +55,14 @@ const NavigationBar = () => {
         {isAuthenticated() && (
           <NavLink
             to="activePresentations"
-            className={({ isActive }) => (isActive ? "active" : undefined)}
+            className={({ isActive }) => (isActive ? "link active" : "link")}
           >
             <FontAwesomeIcon icon={faBoxArchive} /> Active Lectures
           </NavLink>
         )}
       </ul>
 
-      <ul className="side right-side flex">
+      <ul className="side right-side">
         {isAuthenticated() && (
           <p id="user-name">{"Hello " + authUser().firstName}</p>
         )}
@@ -107,9 +106,6 @@ const NavigationBar = () => {
         )}
       </ul>
     </nav>
-    // {isAuthenticated() && (
-    //   <div className="user-greeting">Hello {authUser().firstName}</div>
-    // )}
   );
 };
 

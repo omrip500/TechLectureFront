@@ -53,3 +53,13 @@ nav .side a.active {
   font-weight: 700;
   color: #26890c;
 }
+
+@media (max-width: 500px) {
+  nav {
+    flex-wrap: wrap;
+  }
+
+  nav .side {
+    flex-wrap: wrap;
+  }
+}

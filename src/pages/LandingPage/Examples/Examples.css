@@ -2,15 +2,24 @@
   padding-top: 100px;
 }
 
-.exmples .three-examples {
-  justify-content: center;
-  margin: 1rem 1rem;
-}
-
 .exmples > h1 {
   text-align: center;
   color: rgb(51, 51, 51);
+  font-size: 44px;
   font-weight: 900;
   line-height: 44px;
   line-height: 2;
+}
+
+.three-examples {
+  display: flex;
+  justify-content: center;
+  /* margin: 0 1rem; */
+}
+
+@media (max-width: 500px) {
+  .exmples > h1 {
+    font-size: 30px !important;
+    padding: 0 15px;
+  }
 }

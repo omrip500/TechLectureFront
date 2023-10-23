@@ -9,10 +9,10 @@ const ExplanationExample = ({
   return (
     <div className={`example ${exampleType} flex`}>
       <div className={`examples-text ${exampleType}-text`}>
-        <h2>{titleText}</h2>
+        <h1>{titleText}</h1>
         <p>{paragraphText}</p>
       </div>
-      <img src={imgSrc} />
+      <img className="example-img" src={imgSrc} />
     </div>
   );
 };
