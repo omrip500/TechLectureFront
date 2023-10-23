@@ -4,7 +4,7 @@ import Explanation from "./Explanation/Explanation";
 import { useAuthUser, useIsAuthenticated } from "react-auth-kit";
 import Examples from "./Examples/Examples";
 import Inspiration from "./Inspiration/Inspiration";
-import NotSupportMobilePage from "../NotSupportsMobile/NotSupportMobilePage";
+import Footer from "../../components/Footer/Footer";
 
 function LandingPage() {
   const auth = useAuthUser();
@@ -16,7 +16,7 @@ function LandingPage() {
       <Explanation />
       <Examples />
       <Inspiration />
-      <NotSupportMobilePage />
+      <Footer />
     </div>
   );
 }

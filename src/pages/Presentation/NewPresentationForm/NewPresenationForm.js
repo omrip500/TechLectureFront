@@ -17,6 +17,7 @@ function NewPresenationForm() {
   const [studentPresentationAddress, setStudentPresentationAddress] =
     useState("");
   const [fileName, setFileName] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   if (fileUploadSuccessfully) {
     // return <Navigate to={presenationAddress} replace={true} />;
@@ -45,6 +46,7 @@ function NewPresenationForm() {
     formData.append("date", new Date().toUTCString().slice(5, 16));
 
     try {
+      setIsLoading(true);
       const response = await fetch(`${baseApi}/upload`, {
         method: "POST",
         body: formData,
@@ -58,9 +60,10 @@ function NewPresenationForm() {
           `/lectures/lecturerPosition/${data.fileName}`
         );
         setStudentPresentationAddress(
-          `/lectures/studentPosition/${data.fileName}/`
+          `https://techlectureback.onrender.com/lectures/studentPosition/${data.fileName}/`
         );
         setFileName(data.fileName);
+        setIsLoading(false);
       } else {
         console.log("Upload failed");
       }
@@ -119,12 +122,13 @@ function NewPresenationForm() {
 
             <div className="form-section">
               <button type="submit">Submit Lecture</button>
+              {isLoading && <p>Loading...</p>}
             </div>
           </form>
         </div>
       )}
       {fileUploadSuccessfully && (
-        <div className="lectureDetails flex">
+        <div className="lectureDetails">
           <QRCodeGenerator url={`${studentPresentationAddress}`} />
           <h3>{"Presentation Code: " + fileName}</h3>
           <Link to={lecturerPresenationAddress}>Move to Lecturer Position</Link>

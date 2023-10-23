@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import NavigationBar from "../components/NavBar";
+import NavigationBar from "../components/NavBar/NavBar";
 import "./Root.css";
 
 function RootLayout() {
@@ -8,9 +8,6 @@ function RootLayout() {
       <NavigationBar />
       <main>
         <Outlet />
-        <footer className="footer">
-          <p>&copy; 2023 TechLecture. All rights reserved.</p>
-        </footer>
       </main>
     </>
   );
