@@ -16,7 +16,7 @@ const PDFViewer = ({
   const [uploadedFile, setUploadedFile] = useState(null);
   const [studentsCanUploadFile, setStudentsCanUploadFile] = useState(false);
   const auth = useAuthUser();
-  const socket = io.connect(address);
+  const socket = io.connect(baseApi);
   socket.emit("joinRoom", { room: fileNumber });
 
   useEffect(() => {
@@ -80,7 +80,7 @@ const PDFViewer = ({
 
     try {
       // const response = await fetch("http://localhost:8080/studentsUploads", {
-      const response = await fetch(`${address}/studentsUploads`, {
+      const response = await fetch(`${baseApi}/studentsUploads`, {
         method: "POST",
         body: formData,
       });
