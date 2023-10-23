@@ -6,8 +6,7 @@ import io from "socket.io-client";
 
 import "./PresentationShow.css";
 import NewUserPopUp from "../../../components/NewUserPopUp/NewUserPopUp";
-import NewFilePopUp from "../../../components/NewFilePopUp/NewFilePopUp";
-import address from "../../../address";
+import { baseApi } from "../../../consts";
 
 const PresentationShow = (props) => {
   const [fileFounded, setFiledFounded] = useState(false);
@@ -23,7 +22,7 @@ const PresentationShow = (props) => {
     "File upload is not enabled"
   );
   const [studentsCanUploadFiles, setStudentsCanUploadFiles] = useState(false);
-  const socket = io.connect(address);
+  const socket = io.connect(baseApi);
 
   const auth = useAuthUser();
   const isAuthenticated = useIsAuthenticated();
@@ -46,7 +45,7 @@ const PresentationShow = (props) => {
       try {
         const response = await fetch(
           // "http://localhost:8080/upload/" + fileNumber
-          `${address}/upload/${fileNumber}`
+          `${baseApi}/upload/${fileNumber}`
         );
 
         const data = await response.json();
@@ -57,7 +56,7 @@ const PresentationShow = (props) => {
           if (data.lecturerEmail !== auth().email) {
             setHasPermission(false);
           }
-          const presentationFileUrl = `${address}/uploads/${fileNumber}.${data.fileType}`;
+          const presentationFileUrl = `${baseApi}/uploads/${fileNumber}.${data.fileType}`;
           setFileUrl(presentationFileUrl);
           setLectureTitle(data.lectureTopic);
           setLectureHours(data.hours);
