@@ -64,6 +64,10 @@ nav .side a.active {
     text-align: center;
   }
 
+  nav .side {
+    flex-wrap: wrap;
+  }
+
   nav .side a {
     width: 85px;
   }
