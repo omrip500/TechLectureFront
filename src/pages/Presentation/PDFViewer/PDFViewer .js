@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useAuthUser } from "react-auth-kit";
 import io from "socket.io-client";
 import "./PDFViewer.css";
-import { baseApi } from "../../../consts";
+import address from "../../../address";
 
 const PDFViewer = ({
   url,
@@ -14,8 +14,10 @@ const PDFViewer = ({
 }) => {
   const [pdfData, setPdfData] = useState(null);
   const [uploadedFile, setUploadedFile] = useState(null);
+  const [studentsCanUploadFile, setStudentsCanUploadFile] = useState(false);
   const auth = useAuthUser();
-  const socket = io.connect();
+  const socket = io.connect(address);
+  socket.emit("joinRoom", { room: fileNumber });
 
   useEffect(() => {
     fetch(url)
@@ -31,16 +33,28 @@ const PDFViewer = ({
         console.error("Error fetching PDF:", error);
       });
 
-    // console.log(window.location.href.slice(47));
-
     if (viewType === "student") {
-      socket.emit("joinRoom", { fileNumber });
+      // socket.emit("joinRoom", { fileNumber });
       socket.emit("userConnected", {
         userConnected: auth().firstName + " " + auth().lastName + " ",
         room: fileNumber,
       });
     }
-  }, [url]);
+  }, []);
+
+  useEffect(() => {
+    const getUploadFilesPremission = () => {
+      console.log("IM IN getUploadFilesPremission");
+      // socket.emit("joinRoom", { room: fileNumber }); come back
+      socket.on("studentPremission", ({ havePremission }) => {
+        console.log("Have Premission: " + havePremission);
+        setStudentsCanUploadFile(havePremission);
+      });
+    };
+    getUploadFilesPremission();
+    const intervalId = setInterval(getUploadFilesPremission, 3000);
+    return () => clearInterval(intervalId);
+  }, []);
 
   const handleFileUpload = (e) => {
     setUploadedFile(e.target.files[0]);
@@ -65,7 +79,8 @@ const PDFViewer = ({
     formData.append("presentationNumber", fileNumber);
 
     try {
-      const response = await fetch(`${baseApi}/studentsUploads`, {
+      // const response = await fetch("http://localhost:8080/studentsUploads", {
+      const response = await fetch(`${address}/studentsUploads`, {
         method: "POST",
         body: formData,
       });
@@ -75,7 +90,6 @@ const PDFViewer = ({
         const studentFileNumber = data.studentFileNumber;
         console.log("Student file Number: " + studentFileNumber);
 
-        socket.emit("joinRoom", { fileNumber });
         socket.emit("studentFileNumber", {
           fileNumber: studentFileNumber,
           userUploaded: auth().firstName + " " + auth().lastName + " ",
@@ -134,7 +148,9 @@ const PDFViewer = ({
           <div className="uploaded-file">
             <form onSubmit={handleFileSubmit}>
               <p>Saved File: {uploadedFile.name}</p>
-              <button type="submit">Submit File</button>
+              {studentsCanUploadFile && (
+                <button type="submit">Submit File</button>
+              )}
             </form>
           </div>
         )}
