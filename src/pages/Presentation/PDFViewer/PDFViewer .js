@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useAuthUser } from "react-auth-kit";
 import io from "socket.io-client";
 import "./PDFViewer.css";
-import address from "../../../address";
+import { baseApi } from "../../../consts";
 
 const PDFViewer = ({
   url,
