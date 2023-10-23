@@ -6,6 +6,7 @@ import io from "socket.io-client";
 
 import "./PresentationShow.css";
 import NewUserPopUp from "../../../components/NewUserPopUp/NewUserPopUp";
+import NewFilePopUp from "../../../components/NewFilePopUp/NewFilePopUp";
 import { baseApi } from "../../../consts";
 
 const PresentationShow = (props) => {
