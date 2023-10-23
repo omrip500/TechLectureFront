@@ -1,4 +1,4 @@
-import { useState, useEffect, createContext } from "react";
+import { useState, useEffect } from "react";
 import PDFViewer from "../PDFViewer/PDFViewer ";
 import { useParams } from "react-router-dom";
 import { useAuthUser, useIsAuthenticated } from "react-auth-kit";
@@ -7,7 +7,7 @@ import io from "socket.io-client";
 import "./PresentationShow.css";
 import NewUserPopUp from "../../../components/NewUserPopUp/NewUserPopUp";
 import NewFilePopUp from "../../../components/NewFilePopUp/NewFilePopUp";
-import { baseApi } from "../../../consts";
+import address from "../../../address";
 
 const PresentationShow = (props) => {
   const [fileFounded, setFiledFounded] = useState(false);
@@ -18,18 +18,18 @@ const PresentationShow = (props) => {
   const [userFileUrl, setUserFileUrl] = useState("");
   const [thereIsANewFile, setThereIsANewFile] = useState(false);
   const [userFullName, setUserFulleName] = useState("");
-  const [hasPermission, setHasPermission] = useState(true);
+  const [hasPermission, setHasPermission] = useState(true); // תיקנתי שגיאת כתיב
   const [studentsUploadButtonText, setStudentsUploadButtonText] = useState(
     "File upload is not enabled"
   );
   const [studentsCanUploadFiles, setStudentsCanUploadFiles] = useState(false);
-  const socket = io.connect();
+  const socket = io.connect(address);
 
   const auth = useAuthUser();
   const isAuthenticated = useIsAuthenticated();
   const fileNumber = useParams().fileNumber;
 
-  const [newUsers, setNewUsers] = useState([]);
+  const [newUsers, setNewUsers] = useState([]); // תופסת למעקב אחרי המשתמשים החדשים שמתחברים
 
   const clickHandle = () => {
     setStudentsCanUploadFiles(!studentsCanUploadFiles);
@@ -44,7 +44,10 @@ const PresentationShow = (props) => {
 
     const fetchData = async () => {
       try {
-        const response = await fetch(`${baseApi}/upload/${fileNumber}`);
+        const response = await fetch(
+          // "http://localhost:8080/upload/" + fileNumber
+          `${address}/upload/${fileNumber}`
+        );
 
         const data = await response.json();
         if (data.status === 400) {
@@ -54,7 +57,7 @@ const PresentationShow = (props) => {
           if (data.lecturerEmail !== auth().email) {
             setHasPermission(false);
           }
-          const presentationFileUrl = `${baseApi}/uploads/${fileNumber}.${data.fileType}`;
+          const presentationFileUrl = `${address}/uploads/${fileNumber}.${data.fileType}`;
           setFileUrl(presentationFileUrl);
           setLectureTitle(data.lectureTopic);
           setLectureHours(data.hours);
@@ -99,6 +102,7 @@ const PresentationShow = (props) => {
           setUserFileUrl(`/studentsUploads/${fileNumber}`);
           setThereIsANewFile(true);
           setUserFulleName(userUploaded);
+
           if (studentsCanUploadFiles) {
             window.scrollTo(0, 0);
           }
@@ -108,6 +112,13 @@ const PresentationShow = (props) => {
     const intervalId = setInterval(getStudentFile, 4000);
     return () => clearInterval(intervalId);
   }, [userFileUrl, props.viewType]);
+
+  useEffect(() => {
+    socket.emit("joinRoom", { room: fileNumber });
+    socket.emit("areStudentsPremittedToUploadFiles", {
+      studentsCanUploadFiles: studentsCanUploadFiles,
+    });
+  }, [studentsCanUploadFiles]);
 
   if (!fileUrl && fileFounded) {
     return <h1>Loading...</h1>;
@@ -150,11 +161,13 @@ const PresentationShow = (props) => {
         />
       </div>
     );
+  } else {
+    return (
+      <h1 className="fileNotFoundMessage">
+        Failed to find the requested file.
+      </h1>
+    );
   }
-
-  return (
-    <h1 className="fileNotFoundMessage">Failed to find the requested file.</h1>
-  );
 };
 
 export default PresentationShow;
