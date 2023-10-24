@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import "./Title.css";
 import { useIsAuthenticated } from "react-auth-kit";
 
@@ -21,7 +22,7 @@ const Title = () => {
             </p>
             {!isAuthenticated() && (
               <button class="btn">
-                <a href="register">Sign Up for free</a>
+                <NavLink to="register">Sign Up for free</NavLink>
               </button>
             )}
           </div>
