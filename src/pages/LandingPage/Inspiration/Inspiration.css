@@ -18,8 +18,8 @@
 .inspiration-cards {
   flex-wrap: wrap;
   display: flex;
-  justify-content: space-between;
-  width: clamp(1250px, auto, 1600px);
+  justify-content: center;
+  max-width: 1250px;
   margin: 0 auto;
 }
 
