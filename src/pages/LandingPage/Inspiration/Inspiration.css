@@ -17,19 +17,15 @@
 
 .inspiration-cards {
   flex-wrap: wrap;
-  margin-left: auto;
-  margin-right: auto;
-  width: clamp(1250px, 50vw, 1600px);
+  display: flex;
+  justify-content: space-between;
+  width: clamp(1250px, auto, 1600px);
+  margin: 0 auto;
 }
 
 @media (max-width: 500px) {
   .inspiration-cards {
-    margin-left: 10vw;
-  }
-
-  @media (max-width: 360px) {
-    .inspiration-cards {
-      margin-left: 5%;
-    }
+    flex-direction: column;
+    align-items: center;
   }
 }
