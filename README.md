@@ -1,70 +1,82 @@
-# Getting Started with Create React App
+# TechLecture App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+TechLecture is a communication platform designed for interaction between lecturers and students during physical lectures. The application allows lecturers to present their lecture files from their designated area in the application. Meanwhile, students connected to the lecture online through their laptops or iPads can instantly upload files during the lecture.
 
-## Available Scripts
+## Deployment
 
-In the project directory, you can run:
+The application is deployed at [https://techlectureback.onrender.com/](https://techlectureback.onrender.com/).
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. **Registration**: Users can create new accounts by registering on the platform.
+2. **Login**: Registered users can log in to their accounts.
+3. **Create New Lecture**: Lecturers can create a new lecture session.
+4. **Join Existing Lecture**: Users can join an existing lecture.
+5. **Delete Lecture**: Lecturers have the ability to delete an existing lecture.
+6. **Permission for Students to Upload Files**: Lecturers can dynamically grant students permission to upload files during the ongoing lecture..
+7. **Prevent Students from Uploading Files**: Lecturers can revoke the permission for students to upload files during the ongoing lecture.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technologies Used
 
-### `npm test`
+1. **MongoDB**: Database used for storing application data.
+2. **Express.js**: Web application framework for Node.js used for building the backend.
+3. **React**: JavaScript library for building user interfaces used for the frontend.
+4. **Node.js**: JavaScript runtime environment used for running the server.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Environment Variables
+````bach
+EMAIL_ADDRESS=your.email@gmail.com
+EMAIL_PASSWORD=your-email-password
+JWT_SECRET=your-jwt-secret
+PORT=8080
+````
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## How to Run
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Install dependencies:
 
-### `npm run eject`
+   ```bash
+   npm install
+   nodemon server.js
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Screenshots
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+![Screenshot 1](screenshots/screenshot1.png)
+_Home Screen_
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![Screenshot 2](screenshots/screenshot2.png)
+_Home Screen_
 
-## Learn More
+![Screenshot 3](screenshots/screenshot3.png)
+_Registration Form_
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![Screenshot 4](screenshots/screenshot4.png)
+_Login Form_
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![Screenshot 5](screenshots/screenshot5.png)
+_Identification of an authenticated user.._
 
-### Code Splitting
+![Screenshot 6](screenshots/screenshot6.png)
+_Creating a new lecture Form_
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+![Screenshot 7](screenshots/screenshot8.png)
+_Upon creating a new lecture, a barcode is generated for students to easily join._
 
-### Analyzing the Bundle Size
+![Screenshot 9](screenshots/screenshot9.png)
+_Lecturer Position._
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+![Screenshot 10](screenshots/screenshot10.png)
+_Joining a lecture form._
 
-### Making a Progressive Web App
+![Screenshot 11](screenshots/screenshot11.png)
+_Popup notifying that a new user has joined the lecture._
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+![Screenshot 12](screenshots/screenshot12.png)
+_Student position during the lecture._
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![Screenshot 13](screenshots/screenshot13.png)
+_Popup alerting that a student has uploaded a file during the lecture, with a link to view the file._
