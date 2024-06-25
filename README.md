@@ -4,8 +4,6 @@ TechLecture is a communication platform designed for interaction between lecture
 
 ## Deployment
 
-The application is deployed at [https://techlectureback.onrender.com/](https://techlectureback.onrender.com/).
-
 ## Features
 
 1. **Registration**: Users can create new accounts by registering on the platform.
