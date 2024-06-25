@@ -2,8 +2,6 @@
 
 TechLecture is a communication platform designed for interaction between lecturers and students during physical lectures. The application allows lecturers to present their lecture files from their designated area in the application. Meanwhile, students connected to the lecture online through their laptops or iPads can instantly upload files during the lecture.
 
-## Deployment
-
 ## Features
 
 1. **Registration**: Users can create new accounts by registering on the platform.
